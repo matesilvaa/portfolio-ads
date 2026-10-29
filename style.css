@@ -6,7 +6,7 @@ body {
     min-height: 1500px;
 }
 .destaque {
-    color: #FF8A24;
+    color: white;
     font-size: 48px;  /* modifica o tamanho da fonte */
     margin-bottom: 10px;
 }
@@ -19,17 +19,25 @@ P {
     max-width: 600px;
     margin: 20PX auto;
     line-height: 1.8;
+    color: #b3b3b3;
+    font-size: 16px;
 }
 .apresentacao {
-    padding: 40px 20px;
+    padding: 80px 20px;
     max-width: 800px; /*limita a largura máxima da apresentação. */
     margin: 0 auto; /* centraliza a seção horizontalmente. */
 }
 nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     padding: 20px;
+    flex-wrap: wrap; /* permite que os links quebrem para outra linha em telas pequenas, evitando que fiquem espremidos no celular*/
+    position: sticky; /* permite que o menu acompanhe a rolagem da página.*/
+    top: 0; /*determina que ele fique encostado no topo.*/
+    background-color: #111111; /*evita que o texto da página apareça por trás do menu quando você rolar.*/
+    z-index: 10; /*ajuda a manter o menu à frente dos outros elementos.*/
 }
 nav a {
     color: white;
@@ -41,19 +49,19 @@ nav a:hover{
 }
 .card-projeto {
     background-color: #1a1a1a; /*EFINE O FUNDO DO CARTÃO */
-    border:1px solid #333333; /*CRIA UMA BORDA FINA */
-    border-radius: 12px;  /*RREDONDA OS CANTOS -*/
+    border:1px solid #292929; /*CRIA UMA BORDA FINA */
+    border-radius: 10px;  /*RREDONDA OS CANTOS -*/
     padding: 24px;   /*CRIA ESPAÇOS INTERNOS */
     max-width: 500px;    /*LIMITA A LARGURA MAXIMA */
     margin: 30px auto;   /*ADICIONA ESPAÇOS VERTICAL o auto distribui o espaço horizontal disponível igualmente entre os lados, centralizando o cartão quando há espaço suficiente*/
     transition: 0.3s;   /* transição  e os segundos o tempo para as bordas ficarem laranja  */
-    gap: 12px;
+    gap: 18px;
     flex-direction: column;
     display: flex; 
 }
 .card-projeto:hover {              /*seleciona o cartão que criamos :hover ativa o efeito de passar o mouse em cima */
     border-color: #FF8A24;     /* altera a cor da borda para a cor desejada*/ /*   */
-    transform: scale(1.03);  /* transform permite mudar a forma de um elemento e scale aumenta o tamanho da forma  */
+    transform:  translateY(-4px);  /* transform permite mudar a forma de um elemento e scale aumenta o tamanho da forma  */
 }
 #projetos {
     padding: 40px 20px;
@@ -68,8 +76,8 @@ nav a:hover{
     display: inline-block;
     background-color: #FF8A24;
     color: #111111;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 14px 24px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
@@ -88,4 +96,70 @@ nav a:hover{
     .card-projeto {
         padding: 18px;
     }
+}
+/* ETIQUETA DA APRESENTAÇÃO */
+.etiqueta {
+      color: #FF8A24;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+/* PONTO LARANJA AO LADO DO NOME */
+.destaque span {
+    color: #FF8A24;
+}
+/*SELEÇÃO DE CONTATO/*/
+#contato {
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid #292929;
+    margin-top: 40px;
+}
+#contato h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+#contato a:not(.botao-projeto){
+    color: #ff8a24;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#contato a:not(.botao-projeto):hover {
+    color: white;
+}
+
+/* SEÇÃO SOBRE MIM */
+#sobre-mim {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid #292929;
+}
+
+#sobre-mim h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* TECNOLOGIAS DO PROJETO */
+.tecnologias {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tecnologias span {
+    color: #FF8A24;
+    background-color: #26201A;
+    border: 1px solid #49301D;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
 }

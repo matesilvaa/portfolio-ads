@@ -1,238 +1,611 @@
-body {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-    min-height: 1500px;
-}
-.destaque {
-    color: white;
-    font-size: 48px;  /* modifica o tamanho da fonte */
-    margin-bottom: 10px;
-}
-h2 {
-    color: #888888;
-    font-size: 22PX;
-    font-weight: 400;
-}
-P { 
-    max-width: 600px;
-    margin: 20PX auto;
-    line-height: 1.8;
-    color: #b3b3b3;
-    font-size: 16px;
-}
-.apresentacao {
-    padding: 80px 20px;
-    max-width: 800px; /*limita a largura máxima da apresentação. */
-    margin: 0 auto; /* centraliza a seção horizontalmente. */
-}
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 20px;
-    flex-wrap: wrap; /* permite que os links quebrem para outra linha em telas pequenas, evitando que fiquem espremidos no celular*/
-    position: sticky; /* permite que o menu acompanhe a rolagem da página.*/
-    top: 0; /*determina que ele fique encostado no topo.*/
-    background-color: #111111; /*evita que o texto da página apareça por trás do menu quando você rolar.*/
-    z-index: 10; /*ajuda a manter o menu à frente dos outros elementos.*/
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-nav a:hover{
-    color: #FF8A24
-}
-.card-projeto {
-    background-color: #1a1a1a; /*EFINE O FUNDO DO CARTÃO */
-    border:1px solid #292929; /*CRIA UMA BORDA FINA */
-    border-radius: 10px;  /*RREDONDA OS CANTOS -*/
-    padding: 24px;   /*CRIA ESPAÇOS INTERNOS */
-    max-width: 500px;    /*LIMITA A LARGURA MAXIMA */
-    margin: 30px auto;   /*ADICIONA ESPAÇOS VERTICAL o auto distribui o espaço horizontal disponível igualmente entre os lados, centralizando o cartão quando há espaço suficiente*/
-    transition: 0.3s;   /* transição  e os segundos o tempo para as bordas ficarem laranja  */
-    gap: 18px;
-    flex-direction: column;
-    display: flex; 
-}
-.card-projeto:hover {              /*seleciona o cartão que criamos :hover ativa o efeito de passar o mouse em cima */
-    border-color: #FF8A24;     /* altera a cor da borda para a cor desejada*/ /*   */
-    transform:  translateY(-4px);  /* transform permite mudar a forma de um elemento e scale aumenta o tamanho da forma  */
-}
-#projetos {
-    padding: 40px 20px;
 
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-#projetos h2 {
+
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+:root {
+    --laranja: #FF8A24;
+    --fundo: #0a0a0a;
+    --card: #151515;
+    --borda: #292929;
+    --texto-secundario: #a3a3a3;
+}
+
+
+/* =================================
+   MENU DE NAVEGAÇÃO
+================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--borda);
+}
+
+.menu {
+    max-width: 1150px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
     color: white;
-    font-size: 32px;
-    margin-bottom: 40px;
-}
-.botao-projeto{
-    display: inline-block;
-    background-color: #FF8A24;
-    color: #111111;
-    padding: 14px 24px;
-    border-radius: 6px;
+    font-size: 25px;
+    font-weight: 800;
     text-decoration: none;
-    font-weight: bold;
+}
+
+.logo span {
+    color: var(--laranja);
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.menu-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
     transition: 0.3s;
 }
-.botao-projeto:hover {     /* ATIVA A FUNÇÃO DE QUANDO PASSA O MOUSE -- :HOVER */
-    background-color: white;   /* MUNDA O FUNDO PARA BRANCO */
-    transform: scale(1.05);     /* AUMENTA O BOTÃO NA ESCALA INFORMADA */
+
+.menu-links a:hover {
+    color: var(--laranja);
 }
-@media (max-width: 600px) {
-    .destaque {
-        font-size: 36px;
-    }
-    nav {
-        gap: 18px;
-    }
-    .card-projeto {
-        padding: 18px;
-    }
+
+
+/* =================================
+   APRESENTAÇÃO PRINCIPAL
+================================= */
+
+.apresentacao {
+    max-width: 1150px;
+    min-height: 620px;
+    margin: auto;
+    padding: 100px 25px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 70px;
 }
-/* ETIQUETA DA APRESENTAÇÃO */
+
+.apresentacao-conteudo {
+    text-align: left;
+}
+
 .etiqueta {
-    color: #FF8A24;
-    font-size: 13px;
+    color: var(--laranja);
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
-/* PONTO LARANJA AO LADO DO NOME */
-.destaque span {
-    color: #FF8A24;
-}
-/*SELEÇÃO DE CONTATO/*/
-#contato {
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 1px solid #292929;
-    margin-top: 40px;
-}
-#contato h2 {
+
+.destaque {
     color: white;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 68px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1.1;
+    margin-bottom: 12px;
 }
-#contato a:not(.botao-projeto) {
-    color: #FF8A24;
+
+.destaque span,
+.contato h2 span {
+    color: var(--laranja);
+}
+
+.apresentacao h2 {
+    color: var(--laranja);
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.descricao {
+    max-width: 520px;
+    color: var(--texto-secundario);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+
+/* =================================
+   BOTÕES
+================================= */
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.botao-projeto {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: #111111;
+    padding: 14px 24px;
+    border-radius: 5px;
     text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-#contato a:not(.botao-projeto):hover {
+.botao-projeto:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+.botao-secundario {
+    display: inline-block;
     color: white;
+    border: 1px solid #444444;
+    padding: 13px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-/* SEÇÃO SOBRE MIM */
-#sobre-mim {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 1px solid #292929;
+.botao-secundario:hover {
+    border-color: var(--laranja);
+    color: var(--laranja);
 }
 
-#sobre-mim h2 {
-    color: white;
-    font-size: 32px;
-    margin-bottom: 20px;
+
+/* =================================
+   ELEMENTO VISUAL
+================================= */
+
+.apresentacao-visual {
+    min-height: 370px;
+    background-color: #111111;
+
+    background-image:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 138, 36, 0.08),
+            transparent 65%
+        );
+
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+
+    position: relative;
+    overflow: hidden;
 }
 
-/* TECNOLOGIAS DO PROJETO */
-.tecnologias {
+.visual-circulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circulo-externo {
+    width: 230px;
+    height: 230px;
+    border: 2px solid rgba(255, 138, 36, 0.7);
+}
+
+.circulo-interno {
+    width: 165px;
+    height: 165px;
+    border: 1px solid rgba(255, 138, 36, 0.35);
+}
+
+.visual-nucleo {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(
+        circle,
+        #ffb36b 0%,
+        #FF8A24 60%,
+        #c95b08 100%
+    );
+
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 20px rgba(255, 138, 36, 0.5),
+        0 0 50px rgba(255, 138, 36, 0.2);
+}
+
+.visual-orbita {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    top: 28%;
+    left: 68%;
+
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.visual-legenda {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    width: 100%;
+
     display: flex;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 25px;
+
+    color: #777777;
+    font-size: 10px;
+    letter-spacing: 2px;
 }
 
-.tecnologias span {
-    color: #FF8A24;
-    background-color: #26201A;
-    border: 1px solid #49301D;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: bold;
+
+/* ANIMAÇÃO */
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
-#habilidades {
-    max-width: 800px;
+
+
+/* =================================
+   SEÇÕES GERAIS
+================================= */
+
+.secao {
+    max-width: 1000px;
     margin: 40px auto;
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 1px solid #292929;
+    padding: 80px 25px;
+    border-top: 1px solid var(--borda);
 }
-#habilidades h2 {
+
+.cabecalho-secao {
+    margin-bottom: 35px;
+}
+
+.cabecalho-secao h2 {
     color: white;
     font-size: 32px;
-    margin-bottom: 30px;
+    line-height: 1.3;
 }
+
+.texto-sobre {
+    max-width: 750px;
+    color: var(--texto-secundario);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* =================================
+   HABILIDADES
+================================= */
+
 .lista-habilidades {
     display: flex;
-    justify-content: center;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 12px;
 }
+
 .lista-habilidades span {
-    color: #FF8A24;
-    background-color: #26201A;
-    border: 1px solid #49301D;
-    padding: 10px 16px;
-    border-radius: 4px;
+    color: var(--laranja);
+    background-color: #211a14;
+    border: 1px solid #49301d;
+    padding: 11px 17px;
+    border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-/* SEÇÃO DE FORMAÇÃO ACADÊMICA */
-#formacao {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 1px solid #292929;
+.lista-habilidades span:hover {
+    background-color: #352317;
+    transform: translateY(-3px);
 }
 
-#formacao h2 {
-    color: white;
-    font-size: 32px;
-    margin-bottom: 30px;
-}
+
+/* =================================
+   FORMAÇÃO ACADÊMICA
+================================= */
 
 .lista-disciplinas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .disciplina {
-    background-color: #1a1a1a;
-    border: 1px solid #292929;
+    position: relative;
+    background-color: var(--card);
+    border: 1px solid var(--borda);
     border-radius: 10px;
-    padding: 24px;
+    padding: 25px;
     transition: 0.3s;
 }
 
 .disciplina:hover {
-    border-color: #FF8A24;
-    transform: translateY(-4px);
+    border-color: var(--laranja);
+    transform: translateY(-5px);
+}
+
+.numero-card {
+    display: block;
+    color: var(--laranja);
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 25px;
 }
 
 .disciplina h3 {
-    color: #FF8A24;
-    font-size: 18px;
-    margin-bottom: 12px;
+    color: white;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
 .disciplina p {
+    color: var(--texto-secundario);
     font-size: 14px;
-    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   PROJETOS
+================================= */
+
+.card-projeto {
+    background-color: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 650px;
+    transition: 0.3s;
+}
+
+.card-projeto:hover {
+    border-color: var(--laranja);
+    transform: translateY(-4px);
+}
+
+.projeto-topo {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.projeto-categoria,
+.projeto-numero {
+    color: var(--laranja);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card-projeto h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.card-projeto p {
+    color: var(--texto-secundario);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.tecnologias {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tecnologias span {
+    color: var(--laranja);
+    background-color: #211a14;
+    border: 1px solid #49301d;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.link-projeto {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.link-projeto:hover {
+    color: var(--laranja);
+}
+
+
+/* =================================
+   CONTATO
+================================= */
+
+.contato {
+    text-align: center;
+}
+
+.contato h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contato > p:not(.etiqueta) {
+    max-width: 550px;
+    margin: 0 auto 30px;
+    color: var(--texto-secundario);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.github-link {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.github-link:hover {
+    color: var(--laranja);
+}
+
+
+/* =================================
+   RODAPÉ
+================================= */
+
+footer {
+    border-top: 1px solid var(--borda);
+    padding: 25px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    max-width: 1150px;
+    margin: auto;
+
+    color: #777777;
+    font-size: 12px;
+}
+
+.ponto {
+    color: var(--laranja);
+}
+
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 850px) {
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-links {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .apresentacao {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-top: 75px;
+    }
+
+    .apresentacao-visual {
+        min-height: 320px;
+    }
+
+    .lista-disciplinas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .menu-links {
+        gap: 14px;
+    }
+
+    .menu-links a {
+        font-size: 12px;
+    }
+
+    .destaque {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .apresentacao {
+        padding: 65px 20px;
+    }
+
+    .apresentacao h2 {
+        font-size: 20px;
+    }
+
+    .cabecalho-secao h2 {
+        font-size: 26px;
+    }
+
+    .lista-disciplinas {
+        grid-template-columns: 1fr;
+    }
+
+    .contato h2 {
+        font-size: 29px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }

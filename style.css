@@ -1,0 +1,80 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    min-height: 1500px;
+}
+.destaque {
+    color: #FF8A24;
+    font-size: 48px;  /* modifica o tamanho da fonte */
+    margin-bottom: 10px;
+}
+h2 {
+    color: #888888;
+    font-size: 22PX;
+    font-weight: 400;
+}
+P { 
+    max-width: 600px;
+    margin: 20PX auto;
+    line-height: 1.8;
+}
+.apresentacao {
+    padding: 40px 20px;
+    max-width: 800px; /*limita a largura máxima da apresentação. */
+    margin: 0 auto; /* centraliza a seção horizontalmente. */
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+nav a:hover{
+    color: #FF8A24
+}
+.card-projeto {
+    background-color: #1a1a1a; /*EFINE O FUNDO DO CARTÃO */
+    border:1px solid #333333; /*CRIA UMA BORDA FINA */
+    border-radius: 12px;  /*RREDONDA OS CANTOS -*/
+    padding: 24px;   /*CRIA ESPAÇOS INTERNOS */
+    max-width: 500px;    /*LIMITA A LARGURA MAXIMA */
+    margin: 30px auto;   /*ADICIONA ESPAÇOS VERTICAL o auto distribui o espaço horizontal disponível igualmente entre os lados, centralizando o cartão quando há espaço suficiente*/
+    transition: 0.3s;   /* transição  e os segundos o tempo para as bordas ficarem laranja  */
+    gap: 12px;
+    flex-direction: column;
+    display: flex; 
+}
+.card-projeto:hover {              /*seleciona o cartão que criamos :hover ativa o efeito de passar o mouse em cima */
+    border-color: #FF8A24;     /* altera a cor da borda para a cor desejada*/ /*   */
+    transform: scale(1.03);  /* transform permite mudar a forma de um elemento e scale aumenta o tamanho da forma  */
+}
+#projetos {
+    padding: 40px 20px;
+
+}
+#projetos h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+.botao-projeto{
+    display: inline-block;
+    background-color: #FF8A24;
+    color: #111111;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.botao-projeto:hover {     /* ATIVA A FUNÇÃO DE QUANDO PASSA O MOUSE -- :HOVER */
+    background-color: white;   /* MUNDA O FUNDO PARA BRANCO */
+    transform: scale(1.05);     /* AUMENTA O BOTÃO NA ESCALA INFORMADA */
+}

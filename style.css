@@ -78,3 +78,14 @@ nav a:hover{
     background-color: white;   /* MUNDA O FUNDO PARA BRANCO */
     transform: scale(1.05);     /* AUMENTA O BOTÃO NA ESCALA INFORMADA */
 }
+@media (max-width: 600px) {
+    .destaque {
+        font-size: 36px;
+    }
+    nav {
+        gap: 18px;
+    }
+    .card-projeto {
+        padding: 18px;
+    }
+}

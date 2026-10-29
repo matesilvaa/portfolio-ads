@@ -164,3 +164,75 @@ nav a:hover{
     font-size: 13px;
     font-weight: bold;
 }
+#habilidades {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid #292929;
+}
+#habilidades h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.lista-habilidades {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.lista-habilidades span {
+    color: #FF8A24;
+    background-color: #26201A;
+    border: 1px solid #49301D;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* SEÇÃO DE FORMAÇÃO ACADÊMICA */
+#formacao {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid #292929;
+}
+
+#formacao h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.lista-disciplinas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.disciplina {
+    background-color: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.disciplina:hover {
+    border-color: #FF8A24;
+    transform: translateY(-4px);
+}
+
+.disciplina h3 {
+    color: #FF8A24;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.disciplina p {
+    font-size: 14px;
+    margin: 0 auto;
+}

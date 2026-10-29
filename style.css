@@ -99,7 +99,7 @@ nav a:hover{
 }
 /* ETIQUETA DA APRESENTAÇÃO */
 .etiqueta {
-      color: #FF8A24;
+    color: #FF8A24;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 3px;
@@ -122,11 +122,12 @@ nav a:hover{
     font-size: 28px;
     margin-bottom: 20px;
 }
-#contato a:not(.botao-projeto){
-    color: #ff8a24;
+#contato a:not(.botao-projeto) {
+    color: #FF8A24;
     text-decoration: none;
     transition: 0.3s;
 }
+
 #contato a:not(.botao-projeto):hover {
     color: white;
 }
